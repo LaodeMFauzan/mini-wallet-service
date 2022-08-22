@@ -35,8 +35,8 @@ public class WalletController {
 
 
     @PostMapping("/api/v1/init")
-    public ResponseEntity<InitializeResponse> initializeAccount(@ModelAttribute(name = "customer_xid") String customer_xid) {
-        InitializeResponse response = postInitializeService.initialize(customer_xid);
+    public ResponseEntity<InitializeResponse> initializeAccount(@ModelAttribute(name = "customer_xid") String customerXid) {
+        InitializeResponse response = postInitializeService.initialize(customerXid);
 
         if (Objects.nonNull(response.getData().getError())) {
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
